@@ -48,6 +48,9 @@ class MultiTaskDatasetGen(Dataset):
         # arguments related to prompt sampling
         parser.add_argument("--sample_prompt", type=int, default=0, help='sample prompt or not')
         parser.add_argument("--sample_num", type=str, default='2,2,2', help='the number of sampled data for each task')
+        parser.add_argument("--data_format", type=str, default="standard", help="standard or recdata")
+        parser.add_argument("--topk", type=str, default="1,5,10,20,100", help="Top-k list for RecData evaluation")
+        parser.add_argument("--recdata_output_dir", type=str, default="../results", help="Output dir for RecData metrics")
 
         parser.add_argument("--only_item_id", action='store_true')
         return parser

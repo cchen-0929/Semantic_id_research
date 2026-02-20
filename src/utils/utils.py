@@ -116,7 +116,8 @@ def log_name(args):
         folder_name = 'SP5'
     else:
         folder_name = args.datasets
-    params = [str(args.distributed), str(args.sample_prompt), str(args.his_prefix), str(args.skip_empty_his), str(args.max_his), str(args.master_port), folder_name, args.tasks, args.backbone, args.item_indexing, str(args.lr), str(args.epochs), str(args.batch_size), args.sample_num, args.prompt_file[3:-4]]
+    prompt_stem = os.path.splitext(os.path.basename(args.prompt_file))[0]
+    params = [str(args.distributed), str(args.sample_prompt), str(args.his_prefix), str(args.skip_empty_his), str(args.max_his), str(args.master_port), folder_name, args.tasks, args.backbone, args.item_indexing, str(args.lr), str(args.epochs), str(args.batch_size), args.sample_num, prompt_stem]
     return '_'.join(params)
 
 def setup_model_path(args):

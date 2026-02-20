@@ -1,0 +1,64 @@
+=====================================================
+Conda-Forge PyTorch 2.8 Environment Loaded Successfully!
+=====================================================
+
+To activate the environment:
+  conda activate base
+
+If 'conda activate' fails, use:
+  source $CONDA_PREFIX/etc/profile.d/conda.sh && conda activate base
+
+To verify PyTorch installation:
+  python -c "import torch; print(f'PyTorch {torch.__version__} CUDA:
+{torch.cuda.is_available()}')"
+
+Environment includes:
+  - PyTorch 2.8 with CUDA 12.8 support
+  - Scientific Python stack (numpy, scipy, pandas)
+  - ML libraries (transformers, lightning, timm)
+  - Cray PE integration with optimized MPI
+
+For Jupyter notebook support:
+  setup-kernel (creates Jupyter kernel for this environment)
+
+For distributed training, load:
+  module load aws-ofi-nccl/1.14.2
+
+Ready for single-node and distributed training!
+=====================================================
+
+[rank0]:[W219 16:57:50.341897945 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+Traceback (most recent call last):
+  File "/u/hchen42/IDGenRec/src/main_generative.py", line 146, in <module>
+    distributed_launch()
+  File "/u/hchen42/IDGenRec/src/main_generative.py", line 51, in distributed_launch
+    mp.spawn(
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 215, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 90, in _wrap
+    fn(i, *args)
+  File "/u/hchen42/IDGenRec/src/main_generative.py", line 66, in distributed_main
+    utils.setup_logging(args)
+  File "/u/hchen42/IDGenRec/src/utils/utils.py", line 108, in setup_logging
+    logging.basicConfig(filename=log_file, level=args.logging_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/logging/__init__.py", line 2043, in basicConfig
+    h = FileHandler(filename, mode,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/logging/__init__.py", line 1181, in __init__
+    StreamHandler.__init__(self, self._open())
+                                 ^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/logging/__init__.py", line 1213, in _open
+    return open_func(self.baseFilename, self.mode,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/u/hchen42/IDGenRec/log/Beauty/1_0_1_1_-1_12345_Beauty_sequential_t5-small_sequential_0.001_10_32_2,2,2_hchen42/IDGenRec/prompt.log'
+

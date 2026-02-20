@@ -1,0 +1,41 @@
+================================================
+Job ID: 16028266
+Node: gpua048
+GPU: 0
+Start Time: Thu Feb 19 17:26:18 CST 2026
+Datasets: Sports_and_Outdoors Toys_and_Games Yelp
+================================================
+torch: 2.8.0+cu128
+transformers: 4.56.1
+sklearn: 1.7.2
+numpy: 2.2.6
+cuda_available: True
+------------------------------------------------
+Running dataset: Sports_and_Outdoors at Thu Feb 19 17:26:30 CST 2026
+------------------------------------------------
+{'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'model.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '0', 'master_addr': 'localhost', 'master_port': '12345', 'logging_level': 20, 'id_epochs': 10, 'rec_epochs': 10, 'id_batch_size': 4, 'rec_batch_size': 64, 'rec_model_path': None, 'id_model_path': None, 'id_lr': 0.001, 'rec_lr': 1e-05, 'alt_style': 'id_first', 'test_epoch_id': 1, 'test_epoch_rec': 5, 'rounds': 3, 'data_path': '/u/hchen42/Semantic_ID/RecData', 'item_indexing': 'sequential', 'tasks': 'sequential', 'datasets': 'Sports_and_Outdoors', 'prompt_file': '/u/hchen42/IDGenRec/prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 200, 'collaborative_cluster': 20, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': -1, 'his_prefix': 1, 'his_sep': ' ; ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'seen:0', 'sample_prompt': 0, 'sample_num': '2,2,2', 'data_format': 'recdata', 'topk': '1,5,10,20,100', 'recdata_output_dir': '/u/hchen42/IDGenRec/results', 'only_item_id': False, 'batch_size': 32, 'eval_batch_size': 32, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 10, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'train': 0, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 1, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'world_size': 1, 'rank': 0, 'log_name': '1_0_1_1_-1_12345_Sports_and_Outdoors_sequential_t5-small_sequential_0.001_10_32_2,2,2_prompt', 'model_path': '../model/Sports_and_Outdoors_id_10_rec_10_20260219_172647'}
+Use t5-small backbone model
+Testing RecData Sports_and_Outdoors on task sequential
+@1: Precision=0.822771, Recall=0.822771, MRR=0.822771, MAP=0.822771, NDCG=0.822771
+@5: Precision=0.188089, Recall=0.940446, MRR=0.871426, MAP=0.871426, NDCG=0.888901
+@10: Precision=0.096073, Recall=0.960728, MRR=0.874195, MAP=0.874195, NDCG=0.895522
+@20: Precision=0.048750, Recall=0.974999, MRR=0.875213, MAP=0.875213, NDCG=0.899164
+@100: Precision=0.010000, Recall=1.000000, MRR=0.875861, MAP=0.875861, NDCG=0.903819
+Completed dataset: Sports_and_Outdoors at Thu Feb 19 18:03:19 CST 2026
+------------------------------------------------
+Running dataset: Toys_and_Games at Thu Feb 19 18:03:19 CST 2026
+------------------------------------------------
+{'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'model.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '0', 'master_addr': 'localhost', 'master_port': '12345', 'logging_level': 20, 'id_epochs': 10, 'rec_epochs': 10, 'id_batch_size': 4, 'rec_batch_size': 64, 'rec_model_path': None, 'id_model_path': None, 'id_lr': 0.001, 'rec_lr': 1e-05, 'alt_style': 'id_first', 'test_epoch_id': 1, 'test_epoch_rec': 5, 'rounds': 3, 'data_path': '/u/hchen42/Semantic_ID/RecData', 'item_indexing': 'sequential', 'tasks': 'sequential', 'datasets': 'Toys_and_Games', 'prompt_file': '/u/hchen42/IDGenRec/prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 200, 'collaborative_cluster': 20, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': -1, 'his_prefix': 1, 'his_sep': ' ; ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'seen:0', 'sample_prompt': 0, 'sample_num': '2,2,2', 'data_format': 'recdata', 'topk': '1,5,10,20,100', 'recdata_output_dir': '/u/hchen42/IDGenRec/results', 'only_item_id': False, 'batch_size': 32, 'eval_batch_size': 32, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 10, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'train': 0, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 1, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'world_size': 1, 'rank': 0, 'log_name': '1_0_1_1_-1_12345_Toys_and_Games_sequential_t5-small_sequential_0.001_10_32_2,2,2_prompt', 'model_path': '../model/Toys_and_Games_id_10_rec_10_20260219_180332'}
+Use t5-small backbone model
+Testing RecData Toys_and_Games on task sequential
+@1: Precision=0.814445, Recall=0.814445, MRR=0.814445, MAP=0.814445, NDCG=0.814445
+@5: Precision=0.185226, Recall=0.926128, MRR=0.860787, MAP=0.860787, NDCG=0.877322
+@10: Precision=0.094622, Recall=0.946219, MRR=0.863517, MAP=0.863517, NDCG=0.883868
+@20: Precision=0.048125, Recall=0.962497, MRR=0.864663, MAP=0.864663, NDCG=0.888004
+@100: Precision=0.010000, Recall=1.000000, MRR=0.865562, MAP=0.865562, NDCG=0.894838
+Completed dataset: Toys_and_Games at Thu Feb 19 18:23:36 CST 2026
+------------------------------------------------
+Running dataset: Yelp at Thu Feb 19 18:23:36 CST 2026
+------------------------------------------------
+{'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'model.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '0', 'master_addr': 'localhost', 'master_port': '12345', 'logging_level': 20, 'id_epochs': 10, 'rec_epochs': 10, 'id_batch_size': 4, 'rec_batch_size': 64, 'rec_model_path': None, 'id_model_path': None, 'id_lr': 0.001, 'rec_lr': 1e-05, 'alt_style': 'id_first', 'test_epoch_id': 1, 'test_epoch_rec': 5, 'rounds': 3, 'data_path': '/u/hchen42/Semantic_ID/RecData', 'item_indexing': 'sequential', 'tasks': 'sequential', 'datasets': 'Yelp', 'prompt_file': '/u/hchen42/IDGenRec/prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 200, 'collaborative_cluster': 20, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': -1, 'his_prefix': 1, 'his_sep': ' ; ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'seen:0', 'sample_prompt': 0, 'sample_num': '2,2,2', 'data_format': 'recdata', 'topk': '1,5,10,20,100', 'recdata_output_dir': '/u/hchen42/IDGenRec/results', 'only_item_id': False, 'batch_size': 32, 'eval_batch_size': 32, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 10, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'train': 0, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 1, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'world_size': 1, 'rank': 0, 'log_name': '1_0_1_1_-1_12345_Yelp_sequential_t5-small_sequential_0.001_10_32_2,2,2_prompt', 'model_path': '../model/Yelp_id_10_rec_10_20260219_182350'}
+Use t5-small backbone model

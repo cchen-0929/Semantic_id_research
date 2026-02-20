@@ -1,5 +1,5 @@
 import torch
-from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup
 import logging
 from tqdm import tqdm
 from utils import utils
@@ -211,7 +211,7 @@ class SingleRunner:
             logging.info(f"Building Optimizer {self.args.optim}")
         
         if self.args.optim.lower() == 'adamw':
-            optimizer = AdamW(optimizer_grouped_parameters, lr=self.args.lr, eps=self.args.adam_eps)
+            optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=self.args.lr, eps=self.args.adam_eps)
         else:
             raise NotImplementError
         scheduler = get_linear_schedule_with_warmup(optimizer, warmup_steps, total_steps)

@@ -1,6 +1,6 @@
 from runner.SingleRunner import SingleRunner
 from torch.nn.parallel import DistributedDataParallel as DDP
-from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup
 import torch.distributed as dist
 import logging
 from tqdm import tqdm
@@ -104,8 +104,8 @@ class DistributedRunner(SingleRunner):
             logging.info(f"Building Optimizer {self.args.optim}")
 
         if self.args.optim.lower() == 'adamw':
-            optimizer_id = AdamW(optimizer_grouped_parameters_id, lr=self.args.id_lr, eps=self.args.adam_eps)
-            optimizer_rec = AdamW(optimizer_grouped_parameters_rec, lr=self.args.rec_lr, eps=self.args.adam_eps)
+            optimizer_id = torch.optim.AdamW(optimizer_grouped_parameters_id, lr=self.args.id_lr, eps=self.args.adam_eps)
+            optimizer_rec = torch.optim.AdamW(optimizer_grouped_parameters_rec, lr=self.args.rec_lr, eps=self.args.adam_eps)
         else:
             raise NotImplementError
         scheduler_id = get_linear_schedule_with_warmup(optimizer_id, id_warmup_steps, id_total_steps)

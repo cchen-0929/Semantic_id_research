@@ -11,6 +11,7 @@ from data.MultiTaskDataset_gen import MultiTaskDatasetGen
 from data.MultiTaskDataset_rec import MultiTaskDatasetRec
 from runner.SingleRunner import SingleRunner
 from runner.DistributedRunner_gen import DistributedRunner
+from runner.RecDataRunner import RecDataRunner
 # from runner.DistributedRunner import DistributedRunner
 from processor.Collator import CollatorGen, Collator, TestCollator
 from processor.SingleMultiDataTaskSampler import SingleMultiDataTaskSampler
@@ -23,9 +24,16 @@ from utils import initialization
 from torch.nn.parallel import DistributedDataParallel as DDP
 from utils.dataset_utils import get_dataset_generative, get_loader
 import pdb
-from undecorated import undecorated
+try:
+    from undecorated import undecorated
+except ModuleNotFoundError:
+    undecorated = None
 from types import MethodType
 
+def unwrap_generate(fn):
+    if undecorated is None:
+        return fn
+    return undecorated(fn)
     
     
     
@@ -73,19 +81,24 @@ def distributed_main(local_rank, args):
     model_rec = T5ForConditionalGeneration.from_pretrained(args.backbone, config=config)
 
     # generate with gradient
-    generate_with_grad = undecorated(model_rec.generate)
+    generate_with_grad = unwrap_generate(model_rec.generate)
     model_rec.generate_with_grad = MethodType(generate_with_grad, model_rec)
     model_rec.to(device)
     
+    tokenizer = AutoTokenizer.from_pretrained(args.backbone)
+    model_rec.resize_token_embeddings(len(tokenizer))
+
+    if args.data_format == "recdata":
+        rec_runner = RecDataRunner(model_rec, tokenizer, device, args)
+        rec_runner.test()
+        dist.barrier()
+        dist.destroy_process_group()
+        return
+
     model_gen = AutoModelForSeq2SeqLM.from_pretrained("nandakishormpai/t5-small-machine-articles-tag-generation")
-    # generate with gradient
-    generate_with_grad = undecorated(model_gen.generate)
+    generate_with_grad = unwrap_generate(model_gen.generate)
     model_gen.generate_with_grad = MethodType(generate_with_grad, model_gen)
     model_gen.to(device)
-
-    tokenizer = AutoTokenizer.from_pretrained(args.backbone)
-
-    model_rec.resize_token_embeddings(len(tokenizer))
     model_gen.resize_token_embeddings(len(tokenizer))
     # load models
     if args.rec_model_path:
@@ -118,6 +131,7 @@ def distributed_main(local_rank, args):
             logging.info("Start training")
         runner.train_generator()
     dist.barrier()
+    dist.destroy_process_group()
     
     return
     
@@ -128,5 +142,5 @@ if __name__ == "__main__":
     os.environ["CUDA_VISIBLE_DEVICES"] = init_args.gpu
     ngpus_per_node = torch.cuda.device_count()
 
-    if init_args.distributed and ngpus_per_node > 1:
+    if init_args.distributed and ngpus_per_node > 0:
         distributed_launch()

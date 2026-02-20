@@ -4,7 +4,6 @@ import numpy as np
 import os
 import sys
 from datetime import date, datetime
-from transformers import AdamW, get_linear_schedule_with_warmup
 from collections import OrderedDict
 import torch.nn as nn
 import json

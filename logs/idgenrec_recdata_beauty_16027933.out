@@ -1,0 +1,12 @@
+================================================
+Job ID: 16027933
+Node: gpua017
+GPU: 0
+Start Time: Thu Feb 19 16:57:32 CST 2026
+Dataset: Beauty
+================================================
+torch: 2.8.0+cu128
+transformers: 4.56.1
+sklearn: 1.7.2
+numpy: 2.2.6
+cuda_available: True
