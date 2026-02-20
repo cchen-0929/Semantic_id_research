@@ -42,7 +42,7 @@ def load_recdata(data_root, dataset):
 
                 # User-provided rule:
                 # test_history = items[:-2] + [items[-1]], gt = items[-1]
-                test_hist = train_hist + [items[-1]]
+                test_hist = train_hist + [items[-2]]
                 test_samples.append((user, test_hist, items[-1]))
             else:
                 for i in range(len(items)):
