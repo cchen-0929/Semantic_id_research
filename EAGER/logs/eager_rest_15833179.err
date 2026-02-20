@@ -1,0 +1,39 @@
+=====================================================
+Conda-Forge PyTorch 2.8 Environment Loaded Successfully!
+=====================================================
+
+To activate the environment:
+  conda activate base
+
+If 'conda activate' fails, use:
+  source $CONDA_PREFIX/etc/profile.d/conda.sh && conda activate base
+
+To verify PyTorch installation:
+  python -c "import torch; print(f'PyTorch {torch.__version__} CUDA:
+{torch.cuda.is_available()}')"
+
+Environment includes:
+  - PyTorch 2.8 with CUDA 12.8 support
+  - Scientific Python stack (numpy, scipy, pandas)
+  - ML libraries (transformers, lightning, timm)
+  - Cray PE integration with optimized MPI
+
+For Jupyter notebook support:
+  setup-kernel (creates Jupyter kernel for this environment)
+
+For distributed training, load:
+  module load aws-ofi-nccl/1.14.2
+
+Ready for single-node and distributed training!
+=====================================================
+
+Traceback (most recent call last):
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 365, in <module>
+    main()
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 239, in main
+    model = Trm4Rec(
+            ^^^^^^^^
+  File "/u/hchen42/EAGER/EAGER/lib/Trm4Rec_trainer.py", line 82, in __init__
+    self.tree.item_to_code[-1] = torch.tensor([end_idx-1, end_idx-1]).cuda()
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^
+RuntimeError: The expanded size of the tensor (3) must match the existing size (2) at non-singleton dimension 0.  Target sizes: [3].  Tensor sizes: [2]

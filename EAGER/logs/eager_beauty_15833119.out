@@ -1,0 +1,152 @@
+================================================
+Job ID: 15833119
+Node: gpua076
+GPU: 0
+Start Time: Thu Feb 12 01:07:15 CST 2026
+Dataset: Beauty
+================================================
+start to construct
+get into cluster training process
+start to cluster
+Train iteration done, pcode:0, data size: 16384, elapsed time: 9.05007290840149
+start to process mini-batch parallel.....................................
+Minbatch, batch size: 128, elapsed: 0.0002646446228027344
+Minbatch, batch size: 128, elapsed: 0.00025200843811035156
+Minbatch, batch size: 128, elapsed: 0.000270843505859375
+Minbatch, batch size: 128, elapsed: 0.0002522468566894531
+Minbatch, batch size: 128, elapsed: 0.0002510547637939453
+Minbatch, batch size: 128, elapsed: 0.00025534629821777344
+Minbatch, batch size: 128, elapsed: 0.0002751350402832031
+Minbatch, batch size: 128, elapsed: 0.0002465248107910156
+Minbatch, batch size: 128, elapsed: 0.00024890899658203125
+Minbatch, batch size: 128, elapsed: 0.00023603439331054688
+Minbatch, batch size: 128, elapsed: 0.00023674964904785156
+Minbatch, batch size: 128, elapsed: 0.0002522468566894531
+Minbatch, batch size: 128, elapsed: 0.0002498626708984375
+Minbatch, batch size: 128, elapsed: 0.000240325927734375
+Minbatch, batch size: 128, elapsed: 0.0002703666687011719
+Minbatch, batch size: 128, elapsed: 0.00024890899658203125
+Minbatch, batch size: 128, elapsed: 0.0002467632293701172
+Minbatch, batch size: 128, elapsed: 0.00025963783264160156
+Minbatch, batch size: 128, elapsed: 0.0002918243408203125
+Minbatch, batch size: 128, elapsed: 0.00025916099548339844
+Minbatch, batch size: 128, elapsed: 0.000247955322265625
+Minbatch, batch size: 128, elapsed: 0.0002529621124267578
+Minbatch, batch size: 128, elapsed: 0.0002434253692626953
+Minbatch, batch size: 128, elapsed: 0.000240325927734375
+Minbatch, batch size: 128, elapsed: 0.0003745555877685547
+Minbatch, batch size: 128, elapsed: 0.0002512931823730469
+Minbatch, batch size: 128, elapsed: 0.0002586841583251953
+Minbatch, batch size: 128, elapsed: 0.0002474784851074219
+Minbatch, batch size: 128, elapsed: 0.0002541542053222656
+Minbatch, batch size: 128, elapsed: 0.00025200843811035156
+Minbatch, batch size: 128, elapsed: 0.0002510547637939453
+Minbatch, batch size: 128, elapsed: 0.00024890899658203125
+Minbatch, batch size: 128, elapsed: 0.0002598762512207031
+Minbatch, batch size: 128, elapsed: 0.00024580955505371094
+Minbatch, batch size: 128, elapsed: 0.0002455711364746094
+Minbatch, batch size: 128, elapsed: 0.0002484321594238281
+Minbatch, batch size: 128, elapsed: 0.00024247169494628906
+Minbatch, batch size: 128, elapsed: 0.0002307891845703125
+Minbatch, batch size: 128, elapsed: 0.00024437904357910156
+Minbatch, batch size: 128, elapsed: 0.00022268295288085938
+Minbatch, batch size: 128, elapsed: 0.0002498626708984375
+Minbatch, batch size: 128, elapsed: 0.00022840499877929688
+Minbatch, batch size: 128, elapsed: 0.00024127960205078125
+Minbatch, batch size: 128, elapsed: 0.00021958351135253906
+Minbatch, batch size: 128, elapsed: 0.0002467632293701172
+Minbatch, batch size: 128, elapsed: 0.0002124309539794922
+Minbatch, batch size: 128, elapsed: 0.0002446174621582031
+Minbatch, batch size: 128, elapsed: 0.0002224445343017578
+Minbatch, batch size: 128, elapsed: 0.0002434253692626953
+Minbatch, batch size: 128, elapsed: 0.0002129077911376953
+Minbatch, batch size: 128, elapsed: 0.00024318695068359375
+Minbatch, batch size: 128, elapsed: 0.00021076202392578125
+Minbatch, batch size: 128, elapsed: 0.0002460479736328125
+Minbatch, batch size: 128, elapsed: 0.00022292137145996094
+Minbatch, batch size: 128, elapsed: 0.0002238750457763672
+Minbatch, batch size: 128, elapsed: 0.000217437744140625
+Minbatch, batch size: 128, elapsed: 0.0002567768096923828
+Minbatch, batch size: 128, elapsed: 0.000213623046875
+Minbatch, batch size: 128, elapsed: 0.0002262592315673828
+Minbatch, batch size: 128, elapsed: 0.0002200603485107422
+Minbatch, batch size: 128, elapsed: 0.0002474784851074219
+Minbatch, batch size: 128, elapsed: 0.00021338462829589844
+Minbatch, batch size: 128, elapsed: 0.00021600723266601562
+Minbatch, batch size: 128, elapsed: 0.00022029876708984375
+Minbatch, batch size: 128, elapsed: 0.00025343894958496094
+Minbatch, batch size: 128, elapsed: 0.00021076202392578125
+Minbatch, batch size: 128, elapsed: 0.0002155303955078125
+Minbatch, batch size: 128, elapsed: 0.0002124309539794922
+Minbatch, batch size: 128, elapsed: 0.00026226043701171875
+Minbatch, batch size: 128, elapsed: 0.000213623046875
+Minbatch, batch size: 128, elapsed: 0.00021338462829589844
+Minbatch, batch size: 128, elapsed: 0.0002110004425048828
+Minbatch, batch size: 128, elapsed: 0.00024771690368652344
+Minbatch, batch size: 128, elapsed: 0.00021529197692871094
+Minbatch, batch size: 128, elapsed: 0.00021529197692871094
+Minbatch, batch size: 128, elapsed: 0.00021338462829589844
+Minbatch, batch size: 128, elapsed: 0.0002491474151611328
+Minbatch, batch size: 128, elapsed: 0.00022149085998535156
+Minbatch, batch size: 128, elapsed: 0.0002124309539794922
+Minbatch, batch size: 128, elapsed: 0.000209808349609375
+Minbatch, batch size: 128, elapsed: 0.000247955322265625
+Minbatch, batch size: 128, elapsed: 0.00021505355834960938
+Minbatch, batch size: 128, elapsed: 0.0002155303955078125
+Minbatch, batch size: 128, elapsed: 0.00021958351135253906
+Minbatch, batch size: 128, elapsed: 0.0002474784851074219
+Minbatch, batch size: 128, elapsed: 0.000213623046875
+Minbatch, batch size: 128, elapsed: 0.00022172927856445312
+Minbatch, batch size: 128, elapsed: 0.00021123886108398438
+Minbatch, batch size: 128, elapsed: 0.00022339820861816406
+Minbatch, batch size: 128, elapsed: 0.0002865791320800781
+Minbatch, batch size: 128, elapsed: 0.00022459030151367188
+Minbatch, batch size: 128, elapsed: 0.00021982192993164062
+Minbatch, batch size: 128, elapsed: 0.000244140625
+Minbatch, batch size: 128, elapsed: 0.0002155303955078125
+Minbatch, batch size: 128, elapsed: 0.00022220611572265625
+Minbatch, batch size: 128, elapsed: 0.0002129077911376953
+Minbatch, batch size: 128, elapsed: 0.00022482872009277344
+Minbatch, batch size: 128, elapsed: 0.00028967857360839844
+Minbatch, batch size: 128, elapsed: 0.00023031234741210938
+Minbatch, batch size: 128, elapsed: 0.00022530555725097656
+Minbatch, batch size: 128, elapsed: 0.0002532005310058594
+Minbatch, batch size: 128, elapsed: 0.0002129077911376953
+Minbatch, batch size: 128, elapsed: 0.00021147727966308594
+Minbatch, batch size: 128, elapsed: 0.0002162456512451172
+Minbatch, batch size: 128, elapsed: 0.0002224445343017578
+Minbatch, batch size: 128, elapsed: 0.00030803680419921875
+Minbatch, batch size: 128, elapsed: 0.00021767616271972656
+Minbatch, batch size: 128, elapsed: 0.0002262592315673828
+Minbatch, batch size: 128, elapsed: 0.0002434253692626953
+Minbatch, batch size: 128, elapsed: 0.00022149085998535156
+Minbatch, batch size: 128, elapsed: 0.00021409988403320312
+Minbatch, batch size: 128, elapsed: 0.0002124309539794922
+Minbatch, batch size: 128, elapsed: 0.0002257823944091797
+Minbatch, batch size: 128, elapsed: 0.0002994537353515625
+Minbatch, batch size: 128, elapsed: 0.00021910667419433594
+Minbatch, batch size: 128, elapsed: 0.00021910667419433594
+Minbatch, batch size: 128, elapsed: 0.00023627281188964844
+Minbatch, batch size: 128, elapsed: 0.0002474784851074219
+Minbatch, batch size: 128, elapsed: 0.00024366378784179688
+Minbatch, batch size: 128, elapsed: 0.00023651123046875
+Minbatch, batch size: 128, elapsed: 0.00023698806762695312
+Minbatch, batch size: 128, elapsed: 0.00024771690368652344
+Minbatch, batch size: 128, elapsed: 0.00023651123046875
+Minbatch, batch size: 128, elapsed: 0.00023627281188964844
+Minbatch, batch size: 128, elapsed: 0.00023746490478515625
+Minbatch, batch size: 128, elapsed: 0.0002415180206298828
+Minbatch, batch size: 128, elapsed: 0.00024700164794921875
+Minbatch, batch size: 128, elapsed: 0.00023365020751953125
+cluster all the nodes, cost 7.582024574279785 s
+Dataset: Beauty
+Evaluated users: 22363
+@1: Precision=0.106247, Recall=0.106247, MRR=0.106247, MAP=0.106247, NDCG=0.106247
+@5: Precision=0.054903, Recall=0.274516, MRR=0.165642, MAP=0.165642, NDCG=0.192602
+@10: Precision=0.036744, Recall=0.367437, MRR=0.177939, MAP=0.177939, NDCG=0.222545
+@20: Precision=0.024496, Recall=0.489916, MRR=0.186304, MAP=0.186304, NDCG=0.253344
+@100: Precision=0.010000, Recall=1.000000, MRR=0.196917, MAP=0.196917, NDCG=0.342793
+Saved to: /u/hchen42/EAGER/results/eager_Beauty_20260212_010738
+================================================
+Beauty finished at: Thu Feb 12 01:09:57 CST 2026
+================================================

@@ -1,0 +1,93 @@
+=====================================================
+Conda-Forge PyTorch 2.8 Environment Loaded Successfully!
+=====================================================
+
+To activate the environment:
+  conda activate base
+
+If 'conda activate' fails, use:
+  source $CONDA_PREFIX/etc/profile.d/conda.sh && conda activate base
+
+To verify PyTorch installation:
+  python -c "import torch; print(f'PyTorch {torch.__version__} CUDA:
+{torch.cuda.is_available()}')"
+
+Environment includes:
+  - PyTorch 2.8 with CUDA 12.8 support
+  - Scientific Python stack (numpy, scipy, pandas)
+  - ML libraries (transformers, lightning, timm)
+  - Cray PE integration with optimized MPI
+
+For Jupyter notebook support:
+  setup-kernel (creates Jupyter kernel for this environment)
+
+For distributed training, load:
+  module load aws-ofi-nccl/1.14.2
+
+Ready for single-node and distributed training!
+=====================================================
+
+Traceback (most recent call last):
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 144, in load_sasrec_embed
+    emb = pickle.load(f)
+          ^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/storage.py", line 534, in _load_from_bytes
+    return torch.load(io.BytesIO(b), weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1554, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1812, in _legacy_load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1747, in persistent_load
+    obj = restore_location(obj, location)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 698, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 636, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 615, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on CUDA device 1 but torch.cuda.device_count() is 1. Please use torch.load with map_location to map your storages to an existing device.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 355, in <module>
+    main()
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 211, in main
+    sasrec_emb = load_sasrec_embed(args.data_path, args.dataset, item_num)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/u/hchen42/EAGER/run_recdata_eager.py", line 148, in load_sasrec_embed
+    emb = torch.load(embed_file, map_location="cpu", weights_only=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1554, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1802, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/storage.py", line 534, in _load_from_bytes
+    return torch.load(io.BytesIO(b), weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1554, in load
+    return _legacy_load(
+           ^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1812, in _legacy_load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 1747, in persistent_load
+    obj = restore_location(obj, location)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 698, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 636, in _deserialize
+    device = _validate_device(location, backend_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/rh9.4/user/python/conda-env/pytorch-2.8-cu128/lib/python3.11/site-packages/torch/serialization.py", line 615, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on CUDA device 1 but torch.cuda.device_count() is 1. Please use torch.load with map_location to map your storages to an existing device.
